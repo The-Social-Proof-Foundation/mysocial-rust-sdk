@@ -1,0 +1,36 @@
+[package]
+name = "mysocial-graphql-client"
+version = "0.1.0"
+authors = ["Brandon Williams <brandon@socialproof.foundation>"]
+repository = "https://github.com/The-Social-Proof-Foundation/mysocial-core"
+license = "Apache-2.0"
+edition = "2021"
+publish = false
+readme = "README.md"
+description = "MySocial GraphQL RPC Client for the MySocial Blockchain"
+
+[dependencies]
+anyhow = "1.0.71"
+async-stream = "0.3.3"
+async-trait = "0.1.61"
+base64ct = { version = "1.6.0", features = ["alloc", "std"] }
+bcs = "0.1.4"
+chrono = "0.4.26"
+cynic = "3.7.3"
+futures = "0.3.29"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+serde = { version = "1.0.144" }
+serde_json = {version = "1.0.95"}
+mysocial-types = { package = "mysocial-sdk-types", path = "../mysocial-sdk-types", features = ["serde"] }
+tracing = "0.1.37"
+tokio = "1.36.0"
+url = "2.5.3"
+
+[dev-dependencies]
+mysocial-types = { package = "mysocial-sdk-types", path = "../mysocial-sdk-types", features = ["serde", "rand", "hash"] }
+rand = "0.8.5"
+tokio = { version = "1.40.0", features = ["full"] }
+
+[build-dependencies]
+mysocial_graphql_client_build = { package = "mysocial-graphql-client-build", path = "../mysocial-graphql-client-build" }
+

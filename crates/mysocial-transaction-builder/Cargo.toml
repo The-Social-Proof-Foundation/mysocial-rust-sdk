@@ -1,0 +1,28 @@
+[package]
+name = "mysocial-transaction-builder"
+version = "0.1.0"
+authors = ["Brandon Williams <brandon@socialproof.foundation>"]
+repository = "https://github.com/The-Social-Proof-Foundation/mysocial-core"
+license = "Apache-2.0"
+edition = "2021"
+publish = false
+readme = "README.md"
+description = "Transaction API for the Rust SDK for the MySocial Blockchain"
+
+[dependencies]
+base64ct = { version = "1.6", features = ["std"] }
+bcs = "0.1.6"
+serde = { version = "1.0", features = ["derive"] }
+serde_with = { version = "3.9", default-features = false, features = ["alloc"] }
+mysocial-types = { package = "mysocial-sdk-types", path = "../mysocial-sdk-types", features = ["serde", "hash"] }
+thiserror = "2.0"
+serde_json = { version = "1.0.128" }
+
+[dev-dependencies]
+anyhow = "1.0"
+rand = "0.8"
+serde_json = "1.0"
+mysocial-crypto = { package = "mysocial-crypto", path = "../mysocial-crypto" , features = ["ed25519"] }
+mysocial-graphql-client = { package = "mysocial-graphql-client", path = "../mysocial-graphql-client" }
+mysocial-types = { package = "mysocial-sdk-types", path = "../mysocial-sdk-types", features = ["rand"] }
+tokio = { version = "1.0", features = ["full"] }
