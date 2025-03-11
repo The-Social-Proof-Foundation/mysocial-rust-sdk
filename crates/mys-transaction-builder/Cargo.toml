@@ -1,0 +1,27 @@
+[package]
+name = "mys-transaction-builder"
+version = "0.1.0"
+authors = ["Stefan Stanciulescu <stefan@mystenlabs.com>", "Brandon Williams <brandon@mystenlabs.com>"]
+license = "Apache-2.0"
+edition = "2021"
+publish = false
+readme = "README.md"
+description = "Transaction API for the Rust SDK for the MySocial Blockchain"
+
+[dependencies]
+base64ct = { version = "1.6", features = ["std"] }
+bcs = "0.1.6"
+serde = { version = "1.0", features = ["derive"] }
+serde_with = { version = "3.9", default-features = false, features = ["alloc"] }
+mys-types = { package = "mys-sdk-types", path = "../mys-sdk-types", features = ["serde", "hash"] }
+thiserror = "2.0"
+serde_json = { version = "1.0.128" }
+
+[dev-dependencies]
+anyhow = "1.0"
+rand = "0.8"
+serde_json = "1.0"
+mys-crypto = { package = "mys-crypto", path = "../mys-crypto" , features = ["ed25519"] }
+mys-graphql-client = { package = "mys-graphql-client", path = "../mys-graphql-client" }
+mys-types = { package = "mys-sdk-types", path = "../mys-sdk-types", features = ["rand"] }
+tokio = { version = "1.0", features = ["full"] }

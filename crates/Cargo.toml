@@ -1,3 +1,0 @@
-[workspace]
-resolver = "2"
-members = ["mysocial-sdk-types", "mysocial-crypto", "mysocial-graphql-client", "mysocial-graphql-client-build", "mysocial-transaction-builder"]
